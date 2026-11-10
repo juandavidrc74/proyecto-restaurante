@@ -1,0 +1,263 @@
+Usuarios: admin=1 maitre=2 mesero=4 otro=5 cocinero=13
+== Sesión y permisos ==
+APROBADO | menú público conserva Desplegar Menu y Realizar Pedido | se cumple
+APROBADO | Desplegar Menu muestra los 24 platos | se cumple
+APROBADO | sin sesión se rechaza admin_mesas | se cumple
+APROBADO | sin sesión se rechaza admin_menu | se cumple
+APROBADO | sin sesión se rechaza admin_empleados | se cumple
+APROBADO | sin sesión se rechaza admin_especialidades | se cumple
+APROBADO | sin sesión se rechaza admin_reportes | se cumple
+APROBADO | sin sesión se rechaza admin_historial | se cumple
+APROBADO | sin sesión se rechaza maitre_reservaciones | se cumple
+APROBADO | sin sesión se rechaza maitre_nueva | se cumple
+APROBADO | sin sesión se rechaza maitre_disponibilidad | se cumple
+APROBADO | sin sesión se rechaza maitre_modificar | se cumple
+APROBADO | sin sesión se rechaza maitre_avisos | se cumple
+APROBADO | sin sesión se rechaza mesero_pedidos | se cumple
+APROBADO | sin sesión se rechaza mesero_avisos | se cumple
+APROBADO | sin sesión se rechaza cocinero_ordenes | se cumple
+APROBADO | clave incorrecta rechazada | se cumple
+APROBADO | tras clave incorrecta no hay sesión | se cumple
+APROBADO | un cliente no puede iniciar sesión | se cumple
+APROBADO | al iniciar sesión muestra el menú | se cumple
+APROBADO | administrador ve sus accesos | se cumple
+APROBADO | administrador no ve accesos de cocinero | se cumple
+APROBADO | cocinero no ve accesos de administrador | se cumple
+APROBADO | maitre no accede a admin_mesas | se cumple
+APROBADO | maitre no accede a admin_reportes | se cumple
+APROBADO | mesero no accede a admin_empleados | se cumple
+APROBADO | mesero no accede a maitre_nueva | se cumple
+APROBADO | cocinero no accede a admin_menu | se cumple
+APROBADO | cocinero no accede a mesero_pedidos | se cumple
+APROBADO | admin no accede a maitre_nueva | se cumple
+APROBADO | admin no accede a cocinero_ordenes | se cumple
+APROBADO | mesero no accede a cocinero_ordenes | se cumple
+APROBADO | cocinero no accede a maitre_reservaciones | se cumple
+APROBADO | POST sin sesión no agrega mesas | se cumple
+APROBADO | POST de otro rol no agrega mesas | se cumple
+== Administrador: mesas (PDF 3.1) ==
+APROBADO | muestra cupo total 72 | se cumple
+APROBADO | agregar mesa suma al cupo | se cumple
+APROBADO | modificar sillas | se cumple
+APROBADO | rechaza mesa sin sillas, en español | se cumple
+APROBADO | eliminar mesa sin historial | se cumple
+APROBADO | rechaza eliminar mesa con historial, en español | se cumple
+APROBADO | rechaza reducir sillas de una mesa en uso | La reservación 486 requiere 4 sillas a las 2026-11-06 07:29:00, pero sus mesas asignadas solo ofrecen 1. 
+APROBADO | modificar una mesa inexistente no informa éxito | se cumple
+APROBADO | eliminar una mesa inexistente no informa éxito | se cumple
+== Administrador: menú (PDF 3.3) ==
+APROBADO | agregar plato | se cumple
+APROBADO | guarda tiempo y categoría | se cumple
+APROBADO | el menú muestra el plato nuevo con su categoría | se cumple
+APROBADO | modificar plato | se cumple
+APROBADO | rechaza precio negativo, en español | El precio debe ser un número mayor o igual a cero. 
+APROBADO | rechaza precio NaN | El precio debe ser un número mayor o igual a cero. 
+APROBADO | eliminar un plato inexistente no informa éxito | se cumple
+APROBADO | la tabla del menú tiene tantas columnas como encabezados | se cumple
+APROBADO | rechaza un plato sin nombre | Escriba el nombre y la descripción del plato. 
+APROBADO | eliminar plato sin pedidos | se cumple
+APROBADO | rechaza eliminar plato ya pedido, en español | No se puede eliminar el plato porque ya fue pedido. 
+== Administrador: empleados y especialidades (PDF 2 y 4.2) ==
+APROBADO | registrar cocinero | se cumple
+APROBADO | la clave se guarda como hash, con fecha | se cumple
+APROBADO | el empleado nuevo inicia sesión | se cumple
+APROBADO | sin especialidades no ve órdenes | se cumple
+APROBADO | sin órdenes lo dice | se cumple
+APROBADO | asignar especialidad | se cumple
+APROBADO | con especialidad ve la orden | se cumple
+APROBADO | quitar especialidad | se cumple
+APROBADO | modificar el nombre | se cumple
+APROBADO | sin escribir clave, la clave no cambia | se cumple
+APROBADO | la clave nueva permite entrar | se cumple
+APROBADO | la clave anterior ya no sirve | se cumple
+APROBADO | eliminar empleado sin historial | se cumple
+APROBADO | rechaza eliminar empleado con historial | se cumple
+APROBADO | ese rechazo está en español | No se puede eliminar el empleado porque tiene pedidos. 
+APROBADO | el administrador no se elimina a sí mismo | se cumple
+APROBADO | ese rechazo lo explica | No puede eliminar su propia cuenta. 
+APROBADO | la sesión del administrador sigue activa | se cumple
+APROBADO | rechaza empleado sin clave | se cumple
+APROBADO | ese rechazo pide la clave | La clave es obligatoria. 
+APROBADO | solo registra maitres, meseros y cocineros | se cumple
+APROBADO | ese rechazo pide un rol válido | Seleccione un rol de empleado válido. 
+APROBADO | modificar no actúa sobre clientes | Seleccione un empleado válido. 
+APROBADO | ese rechazo pide un empleado válido | se cumple
+APROBADO | eliminar no actúa sobre un cliente sin historial | Seleccione un empleado válido. 
+APROBADO | la lista solo muestra empleados gestionados | se cumple
+APROBADO | mesero sin pedidos lo ve indicado | se cumple
+APROBADO | eliminar al mesero sin pedidos | se cumple
+== Maitre: reservaciones (PDF 3.2) ==
+APROBADO | crear reservación con cliente nuevo | Reservación registrada. 
+APROBADO | tras crear enlaza a las reservaciones de ese día | se cumple
+APROBADO | el cliente nuevo tiene rol cliente y no tiene clave | se cumple
+APROBADO | el horario queda en la partición de 2027 | se cumple
+APROBADO | rechaza cruce en la misma mesa | La mesa 2 ya tiene una reservación activa en ese horario. 
+APROBADO | permite ventana contigua, a las 2 horas exactas | Reservación registrada. 
+APROBADO | rechaza sillas insuficientes | La reservación 530 requiere 5 sillas a las 2027-03-03 12:00:00, pero sus mesas asignadas solo ofrecen 4. 
+APROBADO | permite una reservación con dos mesas | Reservación registrada. 
+APROBADO | rechaza superar el cupo total | El cupo del restaurante se supera a las 2027-03-10 12:00:00; ajuste las reservaciones o las mesas. 
+APROBADO | rechaza reservación sin mesa | Seleccione al menos una mesa. 
+APROBADO | rechaza una fecha imposible | Ingrese una fecha y hora válidas. 
+APROBADO | el error conserva lo escrito en el formulario | se cumple
+APROBADO | rechaza reservación sin cliente, con mensaje claro | Seleccione un cliente o escriba el nombre de uno nuevo. 
+APROBADO | sin cliente no se crea ninguna reservación | se cumple
+APROBADO | ese mensaje no habla de eliminar | se cumple
+APROBADO | rechaza duración de 2 horas | La duración debe estar entre 1 y 119 minutos. 
+APROBADO | duración personalizable | se cumple
+== Maitre: disponibilidad y modificación ==
+APROBADO | disponibilidad oculta una mesa con reserva dentro de 2 horas | se cumple
+APROBADO | disponibilidad muestra una mesa libre | se cumple
+APROBADO | disponibilidad muestra cupo | se cumple
+APROBADO | disponibilidad avisa de una fecha inválida | se cumple
+APROBADO | la pantalla de modificar precarga la duración | se cumple
+APROBADO | modificar cantidad y duración | Reservación modificada. 
+APROBADO | mover de fecha cambia de partición | Reservación modificada. 
+APROBADO | modificar respeta sillas y deshace todo | se cumple
+== Maitre: estados ==
+APROBADO | lista reservaciones de un día | se cumple
+APROBADO | una reservada no ofrece Liberar | se cumple
+APROBADO | una reservada ofrece Marcar ocupada y Cancelar | se cumple
+APROBADO | marcar ocupada | se cumple
+APROBADO | una ocupada ofrece Liberar y Cancelar, no Marcar ocupada | se cumple
+APROBADO | liberar | se cumple
+APROBADO | una liberada no ofrece acciones | se cumple
+APROBADO | cambiar el estado de una reservación inexistente no informa éxito | se cumple
+APROBADO | rechaza cambiar una liberada, en español y sin números de estado | No se puede modificar una reservación liberada o cancelada. 
+APROBADO | cancelar | se cumple
+APROBADO | la mesa de una cancelada queda libre | Reservación registrada. 
+APROBADO | rechaza cancelar una reservación con pedidos | No se puede cancelar la reservación: uno de sus horarios tiene pedidos asociados. 
+== Aviso al maitre (PDF 4.1) ==
+APROBADO | avisa de una reservación próxima | se cumple
+APROBADO | el bloque tiene id y opción para actualizarse | se cumple
+APROBADO | la reservación lejana sí se creó | Reservación registrada. 
+APROBADO | no avisa de una reservación lejana | se cumple
+== Cocinero (PDF 2) ==
+APROBADO | solo ve órdenes de sus especialidades (2) | se cumple
+APROBADO | las más demoradas primero | web: 973 975  sql: 973 975 
+APROBADO | marcar listo | Orden marcada como lista. 
+APROBADO | la preparación queda a nombre de la sesión, no del formulario | se cumple
+APROBADO | no marca dos veces la misma orden | se cumple
+APROBADO | no prepara un plato sin especialidad | El cocinero 13 no tiene especialidad para el plato 1. 
+== Mesero: entrega y aviso (PDF 3.5 y 4.1) ==
+APROBADO | avisa al mesero cuando la orden está lista | se cumple
+APROBADO | el aviso tiene id y opción para actualizarse | se cumple
+APROBADO | el aviso dice la mesa de la orden | se cumple
+APROBADO | el aviso trae el botón de entrega, para que aparezca sin recargar | se cumple
+APROBADO | no avisa a otro mesero | se cumple
+APROBADO | otro mesero no puede entregarla | se cumple
+APROBADO | no entrega una orden sin preparar | se cumple
+APROBADO | ofrece entregar la orden lista | se cumple
+APROBADO | el botón dice qué orden entrega | se cumple
+APROBADO | registrar la entrega | Orden marcada como entregada. 
+APROBADO | el aviso desaparece tras entregar | se cumple
+== Mesero: pedidos (PDF 3.4) ==
+APROBADO | lista la mesa con reservación vigente | se cumple
+APROBADO | no lista una mesa cuya reservación es más tarde | se cumple
+APROBADO | todas las mesas listadas abren el formulario de pedido | 0 sin formulario
+APROBADO | sin sesión de mesero se rechaza el pedido | se cumple
+APROBADO | sin sesión de mesero no se registra el pedido | se cumple
+APROBADO | muestra el menú para pedir | se cumple
+APROBADO | un solo botón de volver al menú | se cumple
+APROBADO | el formulario de pedido también muestra el bloque de avisos | se cumple
+APROBADO | rechaza un pedido sin platos | se cumple
+APROBADO | registra un pedido con varios platos y cantidades | Pedido registrado. 
+APROBADO | el pedido queda en la mesa correcta | se cumple
+APROBADO | el pedido queda a nombre del mesero de la sesión | se cumple
+APROBADO | el cliente es el de la reservación de esa mesa | se cumple
+APROBADO | lo ve en sus pedidos con estado | se cumple
+APROBADO | rechaza pedir en una mesa sin reservación vigente | se cumple
+== Cocinero: orden por tiempo de preparación (PDF 2) ==
+APROBADO | el plato más demorado sale primero, aunque se pidió después | posiciones 1 y 4
+APROBADO | los tiempos de preparación nunca aumentan en la lista | se cumple
+== Estado del pedido (PDF 3.4 y 3.5) ==
+APROBADO | un pedido nuevo está En preparación | se cumple
+APROBADO | con una orden lista, el pedido sigue En preparación | Orden marcada como lista. 
+APROBADO | con todas las órdenes listas, el pedido está Listo | Orden marcada como lista. 
+APROBADO | con una orden entregada, el pedido sigue Listo | Orden marcada como entregada. 
+APROBADO | con todas las órdenes entregadas, el pedido está Entregado | Orden marcada como entregada. 
+APROBADO | las órdenes de ese pedido muestran su estado | se cumple
+== Maitre: modificar una reservación que ya tiene pedidos (PDF 2) ==
+APROBADO | agrega una mesa a una reservación con pedidos | Reservación modificada. 
+APROBADO | cambia la duración de una reservación con pedidos | se cumple
+APROBADO | no quita la mesa del pedido | No se puede quitar ni mover este horario: tiene pedidos asociados. 
+APROBADO | no mueve de hora una reservación con pedidos | No se puede quitar ni mover este horario: tiene pedidos asociados. 
+APROBADO | esos rechazos dejan la reservación como estaba | se cumple
+APROBADO | la mesa agregada tiene un número mayor, como requiere el caso siguiente | mesas 11 y 15
+APROBADO | quita una mesa agregada por error, que no es la del pedido | Reservación modificada. 
+APROBADO | el pedido sigue en su mesa | se cumple
+== Tablespaces y particiones (PDF 6.1) ==
+APROBADO | horarios_1 está en ts_reservaciones_1 | se cumple
+APROBADO | horarios_1 tiene datos | se cumple
+APROBADO | horarios_2 está en ts_reservaciones_2 | se cumple
+APROBADO | horarios_2 tiene datos | se cumple
+APROBADO | horarios_3 está en ts_reservaciones_3 | se cumple
+APROBADO | horarios_3 tiene datos | se cumple
+APROBADO | los tablespaces están en directorios diferentes | se cumple
+== Reportes e historial (PDF 3.6 y 4.3) ==
+APROBADO | reservaciones por day: 139 filas | se cumple
+APROBADO | ventas por day suman el total 41857000 | suma web: 41857000
+APROBADO | reservaciones por week: 36 filas | se cumple
+APROBADO | ventas por week suman el total 41857000 | suma web: 41857000
+APROBADO | reservaciones por month: 10 filas | se cumple
+APROBADO | ventas por month suman el total 41857000 | suma web: 41857000
+APROBADO | el plato más solicitado es Crema de ahuyama | web: Crema de ahuyama
+APROBADO | la semana se lee como Semana del | se cumple
+APROBADO | el mes se lee como AAAA-MM | se cumple
+APROBADO | el día se lee como AAAA-MM-DD | se cumple
+APROBADO | fechas inválidas en reportes no rompen la página | se cumple
+APROBADO | reservaciones por day: cada valor coincide con la base | se cumple
+APROBADO | ventas por day: cada valor coincide con la base | se cumple
+APROBADO | reservaciones por week: cada valor coincide con la base | se cumple
+APROBADO | ventas por week: cada valor coincide con la base | se cumple
+APROBADO | reservaciones por month: cada valor coincide con la base | se cumple
+APROBADO | ventas por month: cada valor coincide con la base | se cumple
+APROBADO | platos más solicitados: cada valor coincide con la base | se cumple
+APROBADO | periodo inválido no rompe la página | se cumple
+APROBADO | historial muestra sus reservaciones | se cumple
+APROBADO | historial muestra sus órdenes | se cumple
+APROBADO | historial muestra la mesa de todos sus pedidos | 0 sin mesa
+APROBADO | historial cuenta bien las reservaciones en estado Reservada | se cumple
+APROBADO | historial cuenta bien las reservaciones en estado Ocupada | se cumple
+APROBADO | historial cuenta bien las reservaciones en estado Liberada | se cumple
+APROBADO | historial cuenta bien las reservaciones en estado Cancelada | se cumple
+== Seguridad y salidas ==
+APROBADO | GET no modifica datos | se cumple
+APROBADO | el plato con etiquetas sí se guardó | se cumple
+APROBADO | escapa HTML en administrar menú | se cumple
+APROBADO | escapa HTML en el menú público | se cumple
+APROBADO | ids con texto se leen como número y no traen datos de otros | se cumple
+APROBADO | campos enviados como lista no dan avisos en admin_reportes | se cumple
+APROBADO | campos enviados como lista no dan avisos en maitre_reservaciones | se cumple
+APROBADO | campos enviados como lista no dan avisos en maitre_disponibilidad | se cumple
+APROBADO | campos enviados como lista no dan avisos en maitre_nueva | se cumple
+APROBADO | sin avisos de PHP en '' | se cumple
+APROBADO | sin avisos de PHP en 'desplegar_menu' | se cumple
+APROBADO | sin avisos de PHP en 'realizar_pedidos' | se cumple
+APROBADO | sin avisos de PHP en 'iniciar_sesion' | se cumple
+APROBADO | sin avisos de PHP en admin_mesas | se cumple
+APROBADO | sin avisos de PHP en admin_menu | se cumple
+APROBADO | sin avisos de PHP en admin_empleados | se cumple
+APROBADO | sin avisos de PHP en admin_especialidades | se cumple
+APROBADO | sin avisos de PHP en admin_reportes | se cumple
+APROBADO | sin avisos de PHP en admin_historial | se cumple
+APROBADO | sin avisos de PHP en maitre_reservaciones | se cumple
+APROBADO | sin avisos de PHP en maitre_nueva | se cumple
+APROBADO | sin avisos de PHP en maitre_disponibilidad | se cumple
+APROBADO | sin avisos de PHP en maitre_avisos | se cumple
+APROBADO | sin avisos de PHP en mesero_pedidos | se cumple
+APROBADO | sin avisos de PHP en mesero_avisos | se cumple
+APROBADO | sin avisos de PHP en cocinero_ordenes | se cumple
+APROBADO | fechas sin segundos en admin_historial | se cumple
+APROBADO | fechas sin segundos en maitre_reservaciones | se cumple
+APROBADO | fechas sin segundos en mesero_pedidos | se cumple
+APROBADO | fechas sin segundos en cocinero_ordenes | se cumple
+APROBADO | ninguna página visitada en estas pruebas mostró avisos de PHP | se cumple
+APROBADO | control: el detector sí reconoce un aviso de PHP | se cumple
+APROBADO | se publica el script que actualiza los avisos | se cumple
+APROBADO | no se publica .aider.chat.history.md | código 404
+APROBADO | no se publica .aider.input.history | código 404
+APROBADO | no se publica sql/05_datos.sql | código 404
+APROBADO | no se publica docs/decisiones.md | código 404
+APROBADO | no se publica AGENTS.md | código 404
+APROBADO | cerrar sesión termina el acceso | se cumple
+Total: 244 casos, 0 fallidos

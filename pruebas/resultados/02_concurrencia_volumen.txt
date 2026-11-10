@@ -1,0 +1,14 @@
+APROBADO | cruce: la primera sesión confirma | 
+APROBADO | cruce: la segunda sesión es rechazada | La mesa N ya tiene una reservación activa en ese horario.
+APROBADO | cruce: la segunda sesión esperó el bloqueo | si
+APROBADO | cruce: queda una reservación | 1
+APROBADO | cupo: la primera sesión confirma | 
+APROBADO | cupo: la segunda sesión es rechazada por cupo | si
+APROBADO | cupo: queda una reservación | 1
+APROBADO | sillas: la reservación confirma | 
+APROBADO | sillas: la reducción es rechazada | 4
+APROBADO | carrera: la orden es rechazada tras la cancelación | 0
+APROBADO | volumen: 1400 reservaciones sin error | 
+Tiempo de 1400 reservaciones: 2301 ms
+APROBADO | volumen: menos de 30 s | si
+Total fallidos: 0

@@ -1,0 +1,452 @@
+BEGIN
+SET
+CREATE TABLE
+CREATE FUNCTION
+INSERT 0 3
+INSERT 0 4
+INSERT 0 3
+INSERT 0 2
+INSERT 0 2
+INSERT 0 2
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+ probar 
+--------
+ 
+(1 row)
+
+                         caso                          | resultado_esperado |                                                         resultado_obtenido                                                         |  estado  
+-------------------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------+----------
+ actuación usuario-rol única                           | RECHAZO            | RECHAZO: duplicate key value violates unique constraint "uq_actuaciones_usuario_rol"                                               | APROBADO
+ borrar orden solicitada sin preparaciones             | ÉXITO              | ÉXITO                                                                                                                              | APROBADO
+ borrar y reponer horario con pedidos se rechaza       | RECHAZO            | RECHAZO: No se puede quitar ni mover este horario: tiene pedidos asociados.                                                        | APROBADO
+ cambiar cantidad revalida las sillas                  | RECHAZO            | RECHAZO: La reservación 910024 requiere 9 sillas a las 2026-11-10 10:00:00, pero sus mesas asignadas solo ofrecen 4.               | APROBADO
+ cambiar cliente de reservación con pedidos se rechaza | RECHAZO            | RECHAZO: No se puede cambiar el cliente: la reservación tiene horarios con pedidos asociados.                                      | APROBADO
+ cambiar cliente de reservación sin pedidos se permite | ÉXITO              | ÉXITO                                                                                                                              | APROBADO
+ cambiar duración de horario con pedidos se permite    | ÉXITO              | ÉXITO                                                                                                                              | APROBADO
+ cambiar inicio de horario con pedidos se rechaza      | RECHAZO            | RECHAZO: No se puede cambiar inicio, mesa o reservación del horario: tiene pedidos asociados.                                      | APROBADO
+ cambiar mesa de horario con pedidos se rechaza        | RECHAZO            | RECHAZO: No se puede cambiar inicio, mesa o reservación del horario: tiene pedidos asociados.                                      | APROBADO
+ cambiar plato y cantidad de orden solicitada          | ÉXITO              | ÉXITO                                                                                                                              | APROBADO
+ cambiar reservación de horario con pedidos se rechaza | RECHAZO            | RECHAZO: No se puede cambiar inicio, mesa o reservación del horario: tiene pedidos asociados.                                      | APROBADO
+ cancelar reservación con pedidos se rechaza           | RECHAZO            | RECHAZO: No se puede cancelar la reservación: uno de sus horarios tiene pedidos asociados.                                         | APROBADO
+ cancelar reservación sin pedidos se permite           | ÉXITO              | ÉXITO                                                                                                                              | APROBADO
+ cantidad de orden positiva                            | RECHAZO            | RECHAZO: new row for relation "ordenes" violates check constraint "ck_ordenes_cantidad_positiva"                                   | APROBADO
+ cantidad de reservación positiva                      | RECHAZO            | RECHAZO: new row for relation "reservaciones" violates check constraint "ck_reservaciones_cantidad_positiva"                       | APROBADO
+ categoría de tipo limitada                            | RECHAZO            | RECHAZO: new row for relation "tipos" violates check constraint "ck_tipos_categoria"                                               | APROBADO
+ clave y fecha_clave juntas                            | RECHAZO            | RECHAZO: new row for relation "usuarios" violates check constraint "ck_usuarios_clave_fecha_juntas"                                | APROBADO
+ cocinero especializado prepara orden solicitada       | ÉXITO              | ÉXITO                                                                                                                              | APROBADO
+ cruce con reservación cancelada permitido             | ÉXITO              | ÉXITO                                                                                                                              | APROBADO
+ cruce en la misma mesa se rechaza                     | RECHAZO            | RECHAZO: La mesa 910001 ya tiene una reservación activa en ese horario.                                                            | APROBADO
+ dos mesas de una reservación se cuentan una vez       | ÉXITO              | ÉXITO                                                                                                                              | APROBADO
+ duración 1:59 se permite                              | ÉXITO              | ÉXITO                                                                                                                              | APROBADO
+ duración cero se rechaza                              | RECHAZO            | RECHAZO: new row for relation "horarios_2" violates check constraint "ck_horarios_duracion"                                        | APROBADO
+ duración de dos horas se rechaza                      | RECHAZO            | RECHAZO: new row for relation "horarios_2" violates check constraint "ck_horarios_duracion"                                        | APROBADO
+ duración negativa se rechaza                          | RECHAZO            | RECHAZO: new row for relation "horarios_2" violates check constraint "ck_horarios_duracion"                                        | APROBADO
+ eliminar cocinero con especialidades se permite       | ÉXITO              | ÉXITO                                                                                                                              | APROBADO
+ especialidad exige rol cocinero                       | RECHAZO            | RECHAZO: El usuario 910001 debe tener el rol de cocinero para registrar especialidades.                                            | APROBADO
+ estado de reservación dentro del rango                | RECHAZO            | RECHAZO: Una reservación nueva debe iniciar en estado reservada (0).                                                               | APROBADO
+ estado final cancelada no admite transición           | RECHAZO            | RECHAZO: No se puede modificar una reservación liberada o cancelada.                                                               | APROBADO
+ estado final liberada no admite transición            | RECHAZO            | RECHAZO: No se puede modificar una reservación liberada o cancelada.                                                               | APROBADO
+ horarios propios cruzados en misma mesa se rechazan   | RECHAZO            | RECHAZO: La mesa 910001 ya tiene una reservación activa en ese horario.                                                            | APROBADO
+ identificador de mesa único                           | RECHAZO            | RECHAZO: duplicate key value violates unique constraint "mesas_pkey"                                                               | APROBADO
+ id repetido entre particiones se rechaza              | RECHAZO            | RECHAZO: El identificador de horario 991015 ya está en uso.                                                                        | APROBADO
+ liberar con pedidos conserva mesa derivada            | ÉXITO              | ÉXITO                                                                                                                              | APROBADO
+ mesa de pedido con dos mesas devuelve la menor        | ÉXITO              | ÉXITO                                                                                                                              | APROBADO
+ mesas con sillas positivas                            | RECHAZO            | RECHAZO: new row for relation "mesas" violates check constraint "ck_mesas_sillas_positivas"                                        | APROBADO
+ mover horario entre particiones válido                | ÉXITO              | ÉXITO                                                                                                                              | APROBADO
+ mover horario que crea cruce se rechaza               | RECHAZO            | RECHAZO: La mesa 910001 ya tiene una reservación activa en ese horario.                                                            | APROBADO
+ no agregar horario a liberada                         | RECHAZO            | RECHAZO: No se puede agregar un horario a una reservación liberada o cancelada.                                                    | APROBADO
+ no borrar horario de reservación cancelada            | RECHAZO            | RECHAZO: No se puede cambiar ni borrar el horario de una reservación liberada o cancelada.                                         | APROBADO
+ no borrar orden preparada                             | RECHAZO            | RECHAZO: Solo se puede borrar una orden solicitada y sin preparaciones.                                                            | APROBADO
+ no borrar preparación de orden preparada              | RECHAZO            | RECHAZO: No se puede cambiar ni borrar la preparación: la orden ya está preparada o entregada.                                     | APROBADO
+ no cambiar cantidad de orden preparada                | RECHAZO            | RECHAZO: Solo se puede cambiar el plato o la cantidad de una orden solicitada y sin preparaciones.                                 | APROBADO
+ no cambiar cantidad de reservación liberada           | RECHAZO            | RECHAZO: No se puede modificar una reservación liberada o cancelada.                                                               | APROBADO
+ no cambiar horario final                              | RECHAZO            | RECHAZO: No se puede cambiar ni borrar el horario de una reservación liberada o cancelada.                                         | APROBADO
+ no insertar reservación cancelada                     | RECHAZO            | RECHAZO: Una reservación nueva debe iniciar en estado reservada (0).                                                               | APROBADO
+ nombre de plato único                                 | RECHAZO            | RECHAZO: duplicate key value violates unique constraint "uq_platos_nombre"                                                         | APROBADO
+ nombre de rol único                                   | RECHAZO            | RECHAZO: duplicate key value violates unique constraint "uq_roles_nombre"                                                          | APROBADO
+ nombre de tipo único                                  | RECHAZO            | RECHAZO: duplicate key value violates unique constraint "uq_tipos_nombre"                                                          | APROBADO
+ no sumar mesas de horarios en horas distintas         | RECHAZO            | RECHAZO: La reservación 911040 requiere 6 sillas a las 2026-11-11 12:00:00, pero sus mesas asignadas solo ofrecen 4.               | APROBADO
+ orden no cambia pedido_id                             | RECHAZO            | RECHAZO: No se puede cambiar la fecha solicitada ni el pedido de una orden.                                                        | APROBADO
+ orden no cambia solicitado                            | RECHAZO            | RECHAZO: No se puede cambiar la fecha solicitada ni el pedido de una orden.                                                        | APROBADO
+ orden no pasa a preparada sin preparación             | RECHAZO            | RECHAZO: La orden necesita al menos una preparación antes de marcarse preparada.                                                   | APROBADO
+ orden sin reservación vigente se rechaza              | RECHAZO            | RECHAZO: El cliente del pedido no tiene una reservación vigente a la hora solicitada.                                              | APROBADO
+ pedido no cambia cliente con órdenes                  | RECHAZO            | RECHAZO: No se puede cambiar el cliente del pedido porque ya tiene órdenes.                                                        | APROBADO
+ pedido requiere rol de mesero                         | RECHAZO            | RECHAZO: El usuario 910001 debe tener el rol de mesero para registrar el pedido.                                                   | APROBADO
+ precio de plato no negativo                           | RECHAZO            | RECHAZO: new row for relation "platos" violates check constraint "ck_platos_precio_valido"                                         | APROBADO
+ precio de plato no puede ser NaN                      | RECHAZO            | RECHAZO: new row for relation "platos" violates check constraint "ck_platos_precio_valido"                                         | APROBADO
+ preparaciones restringen eliminar cocinero            | RECHAZO            | RECHAZO: update or delete on table "usuarios" violates foreign key constraint "fk_preparaciones_cocinero" on table "preparaciones" | APROBADO
+ preparación requiere especialidad del plato           | RECHAZO            | RECHAZO: El cocinero 910002 no tiene especialidad para el plato 910001.                                                            | APROBADO
+ quitar rol de cocinero con historial se rechaza       | RECHAZO            | RECHAZO: No se puede quitar el rol de cocinero: el usuario tiene especialidades o preparaciones registradas.                       | APROBADO
+ quitar rol directamente con especialidad se rechaza   | RECHAZO            | RECHAZO: No se puede quitar el rol de cocinero: el usuario tiene especialidades o preparaciones registradas.                       | APROBADO
+ reducir sillas con asignación se rechaza              | RECHAZO            | RECHAZO: La reservación 910015 requiere 4 sillas a las 2026-10-21 00:00:00, pero sus mesas asignadas solo ofrecen 3.               | APROBADO
+ retroceso de estado de orden se rechaza               | RECHAZO            | RECHAZO: Transición de orden no permitida: 1 a 0.                                                                                  | APROBADO
+ salto de estado de orden se rechaza                   | RECHAZO            | RECHAZO: Transición de orden no permitida: 0 a 2.                                                                                  | APROBADO
+ sillas insuficientes se rechazan diferido             | RECHAZO            | RECHAZO: La reservación 910008 requiere 5 sillas a las 2026-11-10 10:00:00, pero sus mesas asignadas solo ofrecen 4.               | APROBADO
+ sillas suficientes en cada horario distinto           | ÉXITO              | ÉXITO                                                                                                                              | APROBADO
+ superar cupo se rechaza                               | RECHAZO            | RECHAZO: El cupo del restaurante se supera a las 2026-11-10 10:00:00; ajuste las reservaciones o las mesas.                        | APROBADO
+ tiempo de plato positivo                              | RECHAZO            | RECHAZO: new row for relation "platos" violates check constraint "ck_platos_tiempo_positivo"                                       | APROBADO
+ transición reservada a ocupada permitida              | ÉXITO              | ÉXITO                                                                                                                              | APROBADO
+ usuario nombre no vacío                               | RECHAZO            | RECHAZO: new row for relation "usuarios" violates check constraint "ck_usuarios_nombre_no_vacio"                                   | APROBADO
+ ventanas contiguas permitidas                         | ÉXITO              | ÉXITO                                                                                                                              | APROBADO
+(72 rows)
+
+ total_fallidos 
+----------------
+              0
+(1 row)
+
+ROLLBACK

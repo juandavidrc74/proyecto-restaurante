@@ -1,0 +1,24 @@
+Clúster temporal de PostgreSQL 13.23
+APROBADO | 00_preparacion
+APROBADO | reconstruir
+APROBADO | 05_datos
+APROBADO | 06_consultas
+APROBADO | sql/06 no cambia los datos de las 12 tablas
+APROBADO | ninguna consulta de sql/06 sale vacía con los datos recién cargados
+Filas cargadas:
+tipos 4
+platos 24
+usuarios 53
+roles 5
+actuaciones 53
+especialidades 32
+mesas 15
+reservaciones 536
+horarios 574
+pedidos 398
+ordenes 998
+preparaciones 993
+Particiones y tablespaces:
+horarios_1 ts_reservaciones_1
+horarios_2 ts_reservaciones_2
+horarios_3 ts_reservaciones_3

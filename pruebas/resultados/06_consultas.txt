@@ -1,0 +1,614 @@
+ mesa_id | sillas | sillas_totales 
+---------+--------+----------------
+       1 |      2 |             72
+       2 |      4 |             72
+       3 |      6 |             72
+       4 |      8 |             72
+       5 |      2 |             72
+       6 |      4 |             72
+       7 |      6 |             72
+       8 |      8 |             72
+       9 |      2 |             72
+      10 |      4 |             72
+      11 |      6 |             72
+      12 |      8 |             72
+      13 |      2 |             72
+      14 |      4 |             72
+      15 |      6 |             72
+(15 rows)
+
+ mesa_id | sillas | sillas_totales | sillas_ocupadas | sillas_libres 
+---------+--------+----------------+-----------------+---------------
+       1 |      2 |             72 |              12 |            60
+       2 |      4 |             72 |              12 |            60
+       3 |      6 |             72 |              12 |            60
+       4 |      8 |             72 |              12 |            60
+       5 |      2 |             72 |              12 |            60
+       6 |      4 |             72 |              12 |            60
+       7 |      6 |             72 |              12 |            60
+       8 |      8 |             72 |              12 |            60
+       9 |      2 |             72 |              12 |            60
+      10 |      4 |             72 |              12 |            60
+      14 |      4 |             72 |              12 |            60
+      15 |      6 |             72 |              12 |            60
+(12 rows)
+
+ reservacion_id |    cliente     | cantidad | estado | mesas |       inicio        
+----------------+----------------+----------+--------+-------+---------------------
+            496 | Ángela Caicedo |        4 |      1 | 11    | 2026-11-08 19:17:00
+            497 | Maicol Beltrán |        6 |      1 | 12    | 2026-11-08 19:32:00
+            498 | Yadira Salcedo |        2 |      0 | 13    | 2026-11-08 20:17:00
+            499 | Yadira Salcedo |        4 |      0 | 14    | 2026-11-08 23:00:00
+(4 rows)
+
+ id |         nombre         
+----+------------------------
+ 40 | Andrés Felipe Burbano
+ 14 | Ángela Caicedo
+ 53 | Antonella Rosero
+ 24 | Camilo Andrés Perea
+ 47 | Candelaria Rojas
+ 51 | Cecilia Narváez
+ 44 | David Estupiñán
+ 38 | Emilio Santacruz
+ 50 | Emmanuel Pantoja
+ 30 | Esteban Ordóñez
+ 46 | Felipe Zambrano
+ 41 | Gabriela Peñaloza
+ 29 | Isabela Murillo
+ 52 | Jerónimo Chaves
+ 17 | Jhon Fajardo
+ 37 | Juliana Lemos
+ 43 | Laura Marcela Cerquera
+ 18 | Leider Pineda
+ 21 | Luz Marina Cuéllar
+ 15 | Maicol Beltrán
+ 35 | Manuela Castaño
+ 27 | María Fernanda Solano
+ 49 | Mariana Burbano
+ 42 | Mateo Figueroa
+ 19 | Milena Cerón
+ 33 | Natalia Becerra
+ 28 | Nicolás Ceballos
+ 48 | Nicolás Erazo
+ 22 | Óscar Julián Porras
+ 31 | Paola Andrea Hoyos
+ 45 | Salomé Villota
+ 36 | Samuel Gaitán
+ 26 | Santiago Londoño
+ 39 | Sara Valderrama
+ 32 | Sebastián Cuervo
+ 23 | Tatiana Bolaños
+ 34 | Tomás Villamil
+ 25 | Valentina Noreña
+ 16 | Yadira Salcedo
+ 20 | Yerson Baquero
+(40 rows)
+
+ id |          nombre           |     tipo     |                         descripcion                          | precio 
+----+---------------------------+--------------+--------------------------------------------------------------+--------
+  1 | Arepa de choclo con queso | entrada      | Arepa dorada de maíz tierno con queso campesino.             |   8500
+  6 | Carimañolas de yuca       | entrada      | Carimañolas rellenas de queso y acompañadas de ají casero.   |  13000
+  5 | Ceviche de champiñones    | entrada      | Champiñones marinados con limón, cebolla morada y cilantro.  |  18000
+  2 | Crema de ahuyama          | entrada      | Crema suave de ahuyama con cilantro y semillas tostadas.     |  12000
+  3 | Empanadas de pipián       | entrada      | Empanadas de masa de maíz con papa colorada y maní.          |  14000
+  4 | Patacón con hogao         | entrada      | Patacón crocante servido con hogao de tomate y cebolla.      |  11000
+  7 | Ajiaco santafereño        | plato fuerte | Sopa bogotana de pollo, papa criolla, mazorca y guascas.     |  32000
+ 11 | Arroz atollado            | plato fuerte | Arroz del Valle con pollo, cerdo, papa amarilla y hogao.     |  30000
+  8 | Bandeja paisa             | plato fuerte | Fríjoles, arroz, carne, chicharrón, huevo, arepa y aguacate. |  38000
+ 12 | Lomo en salsa de panela   | plato fuerte | Lomo de res con reducción de panela y vegetales asados.      |  42000
+  9 | Sobrebarriga en salsa     | plato fuerte | Sobrebarriga cocida lentamente con salsa criolla y papa.     |  36000
+ 10 | Trucha al ajillo          | plato fuerte | Trucha a la plancha con ajo, limón, papa y ensalada fresca.  |  34000
+ 15 | Arroz con leche           | postre       | Arroz con leche cremosa, canela y ralladura de naranja.      |  11000
+ 16 | Brevas con arequipe       | postre       | Brevas cocidas lentamente servidas con arequipe.             |  12000
+ 14 | Cuajada con melao         | postre       | Cuajada fresca acompañada de melao de panela.                |  10000
+ 18 | Merengón de guanábana     | postre       | Merengue horneado con crema y pulpa de guanábana.            |  16000
+ 13 | Obleas con arequipe       | postre       | Oblea crujiente rellena de arequipe y queso rallado.         |   9000
+ 17 | Torta de almojábana       | postre       | Torta tibia de queso y almojábana con centro suave.          |  14000
+ 20 | Aguapanela con limón      | bebida       | Aguapanela tradicional servida fría o caliente.              |   6000
+ 23 | Chocolate santafereño     | bebida       | Chocolate de mesa batido y servido con canela.               |   8000
+ 21 | Jugo de lulo              | bebida       | Jugo natural de lulo preparado al momento.                   |   8500
+ 22 | Jugo de mora              | bebida       | Jugo natural de mora con agua o leche.                       |   8500
+ 24 | Kumis de la casa          | bebida       | Kumis frío de preparación artesanal.                         |   7500
+ 19 | Limonada de panela        | bebida       | Limonada fresca endulzada con panela artesanal.              |   7000
+(24 rows)
+
+ id |          nombre           |                         descripcion                          | tipo_id |  categoria   | minutos | precio 
+----+---------------------------+--------------------------------------------------------------+---------+--------------+---------+--------
+  1 | Arepa de choclo con queso | Arepa dorada de maíz tierno con queso campesino.             |       1 | entrada      |      10 |   8500
+  6 | Carimañolas de yuca       | Carimañolas rellenas de queso y acompañadas de ají casero.   |       1 | entrada      |      25 |  13000
+  5 | Ceviche de champiñones    | Champiñones marinados con limón, cebolla morada y cilantro.  |       1 | entrada      |      15 |  18000
+  2 | Crema de ahuyama          | Crema suave de ahuyama con cilantro y semillas tostadas.     |       1 | entrada      |      20 |  12000
+  3 | Empanadas de pipián       | Empanadas de masa de maíz con papa colorada y maní.          |       1 | entrada      |      30 |  14000
+  4 | Patacón con hogao         | Patacón crocante servido con hogao de tomate y cebolla.      |       1 | entrada      |      45 |  11000
+  7 | Ajiaco santafereño        | Sopa bogotana de pollo, papa criolla, mazorca y guascas.     |       2 | plato fuerte |      35 |  32000
+ 11 | Arroz atollado            | Arroz del Valle con pollo, cerdo, papa amarilla y hogao.     |       2 | plato fuerte |      45 |  30000
+  8 | Bandeja paisa             | Fríjoles, arroz, carne, chicharrón, huevo, arepa y aguacate. |       2 | plato fuerte |      40 |  38000
+ 12 | Lomo en salsa de panela   | Lomo de res con reducción de panela y vegetales asados.      |       2 | plato fuerte |      25 |  42000
+  9 | Sobrebarriga en salsa     | Sobrebarriga cocida lentamente con salsa criolla y papa.     |       2 | plato fuerte |      50 |  36000
+ 10 | Trucha al ajillo          | Trucha a la plancha con ajo, limón, papa y ensalada fresca.  |       2 | plato fuerte |      30 |  34000
+ 15 | Arroz con leche           | Arroz con leche cremosa, canela y ralladura de naranja.      |       3 | postre       |      18 |  11000
+ 16 | Brevas con arequipe       | Brevas cocidas lentamente servidas con arequipe.             |       3 | postre       |      16 |  12000
+ 14 | Cuajada con melao         | Cuajada fresca acompañada de melao de panela.                |       3 | postre       |      12 |  10000
+ 18 | Merengón de guanábana     | Merengue horneado con crema y pulpa de guanábana.            |       3 | postre       |      28 |  16000
+ 13 | Obleas con arequipe       | Oblea crujiente rellena de arequipe y queso rallado.         |       3 | postre       |       8 |   9000
+ 17 | Torta de almojábana       | Torta tibia de queso y almojábana con centro suave.          |       3 | postre       |      22 |  14000
+ 20 | Aguapanela con limón      | Aguapanela tradicional servida fría o caliente.              |       4 | bebida       |       6 |   6000
+ 23 | Chocolate santafereño     | Chocolate de mesa batido y servido con canela.               |       4 | bebida       |      11 |   8000
+ 21 | Jugo de lulo              | Jugo natural de lulo preparado al momento.                   |       4 | bebida       |       7 |   8500
+ 22 | Jugo de mora              | Jugo natural de mora con agua o leche.                       |       4 | bebida       |       9 |   8500
+ 24 | Kumis de la casa          | Kumis frío de preparación artesanal.                         |       4 | bebida       |       4 |   7500
+ 19 | Limonada de panela        | Limonada fresca endulzada con panela artesanal.              |       4 | bebida       |       5 |   7000
+(24 rows)
+
+ id |      nombre      |  roles   
+----+------------------+----------
+  4 | Brayan Quintero  | mesero
+ 10 | Fabio Chacón     | cocinero
+ 12 | Harold Patiño    | cocinero
+  3 | Jhonatan Rincón  | maitre
+  5 | Leidy Mosquera   | mesero
+  2 | Marleny Cárdenas | maitre
+  7 | Mónica Téllez    | mesero
+ 11 | Nidia Cifuentes  | cocinero
+ 13 | Sonia Guarín     | cocinero
+  8 | Wilmer Buitrago  | mesero
+  6 | Yeison Ocampo    | mesero
+  9 | Yulieth Arboleda | cocinero
+(12 rows)
+
+ cocinero_id |     cocinero     | plato_id |           plato           |  tiempo  
+-------------+------------------+----------+---------------------------+----------
+           9 | Yulieth Arboleda |        1 | Arepa de choclo con queso | 00:10:00
+           9 | Yulieth Arboleda |       11 | Arroz atollado            | 00:45:00
+           9 | Yulieth Arboleda |       16 | Brevas con arequipe       | 00:16:00
+           9 | Yulieth Arboleda |        6 | Carimañolas de yuca       | 00:25:00
+           9 | Yulieth Arboleda |       21 | Jugo de lulo              | 00:07:00
+           9 | Yulieth Arboleda |       24 | Kumis de la casa          | 00:04:00
+           9 | Yulieth Arboleda |        9 | Sobrebarriga en salsa     | 00:50:00
+(7 rows)
+
+ id | sillas |       inicio        |   nombre_usr   
+----+--------+---------------------+----------------
+ 11 |      6 | 2026-11-08 19:17:00 | Ángela Caicedo
+ 12 |      8 | 2026-11-08 19:32:00 | Maicol Beltrán
+(2 rows)
+
+ cliente_id |    cliente     
+------------+----------------
+         14 | Ángela Caicedo
+(1 row)
+
+ pedido_id |    cliente     | mesa_id |       primer_solicitado       | estado 
+-----------+----------------+---------+-------------------------------+--------
+       397 | Ángela Caicedo |      11 | 2026-11-08 19:57:56.576006-05 |      0
+       398 | Maicol Beltrán |      12 | 2026-11-08 19:57:56.576006-05 |      1
+(2 rows)
+
+ orden_id | pedido_id |           plato           | cantidad |       solicitado       | estado 
+----------+-----------+---------------------------+----------+------------------------+--------
+        1 |         1 | Arepa de choclo con queso |        3 | 2026-08-01 12:30:00-05 |      2
+        2 |         1 | Crema de ahuyama          |        4 | 2026-08-01 12:30:00-05 |      2
+(2 rows)
+
+ orden_id |           plato           | minutos | cantidad |          solicitado           
+----------+---------------------------+---------+----------+-------------------------------
+      991 | Arepa de choclo con queso |      10 |        1 | 2026-11-08 19:57:56.576006-05
+(1 row)
+
+ orden_id | pedido_id | mesa_id |        plato        | cantidad |          solicitado           
+----------+-----------+---------+---------------------+----------+-------------------------------
+      996 |       398 |      12 | Carimañolas de yuca |        1 | 2026-11-08 19:57:56.576006-05
+      997 |       398 |      12 | Ajiaco santafereño  |        1 | 2026-11-08 19:57:56.576006-05
+(2 rows)
+
+ reservacion_id |    cliente     | cantidad | estado | mesas |       inicio        
+----------------+----------------+----------+--------+-------+---------------------
+            498 | Yadira Salcedo |        2 |      0 | 13    | 2026-11-08 20:17:00
+(1 row)
+
+   inicio_periodo    | reservaciones 
+---------------------+---------------
+ 2026-08-01 00:00:00 |             5
+ 2026-08-02 00:00:00 |             4
+ 2026-08-03 00:00:00 |             5
+ 2026-08-04 00:00:00 |             4
+ 2026-08-05 00:00:00 |             5
+ 2026-08-06 00:00:00 |             4
+ 2026-08-07 00:00:00 |             5
+ 2026-08-08 00:00:00 |             4
+ 2026-08-09 00:00:00 |             5
+ 2026-08-10 00:00:00 |             4
+ 2026-08-11 00:00:00 |             5
+ 2026-08-12 00:00:00 |             4
+ 2026-08-13 00:00:00 |             5
+ 2026-08-14 00:00:00 |             4
+ 2026-08-15 00:00:00 |             5
+ 2026-08-16 00:00:00 |             4
+ 2026-08-17 00:00:00 |             5
+ 2026-08-18 00:00:00 |             4
+ 2026-08-19 00:00:00 |             5
+ 2026-08-20 00:00:00 |             4
+ 2026-08-21 00:00:00 |             5
+ 2026-08-22 00:00:00 |             4
+ 2026-08-23 00:00:00 |             5
+ 2026-08-24 00:00:00 |             4
+ 2026-08-25 00:00:00 |             5
+ 2026-08-26 00:00:00 |             4
+ 2026-08-27 00:00:00 |             5
+ 2026-08-28 00:00:00 |             4
+ 2026-08-29 00:00:00 |             5
+ 2026-08-30 00:00:00 |             4
+ 2026-08-31 00:00:00 |             5
+ 2026-09-01 00:00:00 |             4
+ 2026-09-02 00:00:00 |             5
+ 2026-09-03 00:00:00 |             4
+ 2026-09-04 00:00:00 |             5
+ 2026-09-05 00:00:00 |             4
+ 2026-09-06 00:00:00 |             5
+ 2026-09-07 00:00:00 |             4
+ 2026-09-08 00:00:00 |             5
+ 2026-09-09 00:00:00 |             4
+ 2026-09-10 00:00:00 |             5
+ 2026-09-11 00:00:00 |             4
+ 2026-09-12 00:00:00 |             5
+ 2026-09-13 00:00:00 |             4
+ 2026-09-14 00:00:00 |             5
+ 2026-09-15 00:00:00 |             4
+ 2026-09-16 00:00:00 |             5
+ 2026-09-17 00:00:00 |             4
+ 2026-09-18 00:00:00 |             5
+ 2026-09-19 00:00:00 |             4
+ 2026-09-20 00:00:00 |             5
+ 2026-09-21 00:00:00 |             4
+ 2026-09-22 00:00:00 |             5
+ 2026-09-23 00:00:00 |             4
+ 2026-09-24 00:00:00 |             5
+ 2026-09-25 00:00:00 |             4
+ 2026-09-26 00:00:00 |             5
+ 2026-09-27 00:00:00 |             4
+ 2026-09-28 00:00:00 |             5
+ 2026-09-29 00:00:00 |             4
+ 2026-09-30 00:00:00 |             5
+ 2026-10-01 00:00:00 |             4
+ 2026-10-02 00:00:00 |             5
+ 2026-10-03 00:00:00 |             4
+ 2026-10-04 00:00:00 |             5
+ 2026-10-05 00:00:00 |             4
+ 2026-10-06 00:00:00 |             5
+ 2026-10-07 00:00:00 |             4
+ 2026-10-08 00:00:00 |             5
+ 2026-10-09 00:00:00 |             4
+ 2026-10-10 00:00:00 |             5
+ 2026-10-11 00:00:00 |             4
+ 2026-10-12 00:00:00 |             5
+ 2026-10-13 00:00:00 |             4
+ 2026-10-14 00:00:00 |             5
+ 2026-10-15 00:00:00 |             4
+ 2026-10-16 00:00:00 |             5
+ 2026-10-17 00:00:00 |             4
+ 2026-10-18 00:00:00 |             5
+ 2026-10-19 00:00:00 |             4
+ 2026-10-20 00:00:00 |             5
+ 2026-10-21 00:00:00 |             4
+ 2026-10-22 00:00:00 |             5
+ 2026-10-23 00:00:00 |             4
+ 2026-10-24 00:00:00 |             5
+ 2026-10-25 00:00:00 |             4
+ 2026-10-26 00:00:00 |             5
+ 2026-10-27 00:00:00 |             4
+ 2026-10-28 00:00:00 |             5
+ 2026-10-29 00:00:00 |             4
+ 2026-10-30 00:00:00 |             5
+ 2026-10-31 00:00:00 |             4
+ 2026-11-01 00:00:00 |             5
+ 2026-11-02 00:00:00 |             4
+ 2026-11-03 00:00:00 |             5
+ 2026-11-04 00:00:00 |             4
+ 2026-11-05 00:00:00 |             5
+ 2026-11-06 00:00:00 |             4
+ 2026-11-07 00:00:00 |             5
+ 2026-11-08 00:00:00 |             4
+ 2026-11-09 00:00:00 |             1
+ 2026-11-10 00:00:00 |             1
+ 2026-11-11 00:00:00 |             1
+ 2026-11-12 00:00:00 |             1
+ 2026-11-13 00:00:00 |             1
+ 2026-11-14 00:00:00 |             1
+ 2026-11-15 00:00:00 |             1
+ 2026-11-16 00:00:00 |             1
+ 2026-11-17 00:00:00 |             1
+ 2026-11-18 00:00:00 |             1
+ 2026-11-19 00:00:00 |             1
+ 2026-11-20 00:00:00 |             1
+ 2026-11-21 00:00:00 |             1
+ 2026-11-22 00:00:00 |             1
+ 2026-11-23 00:00:00 |             1
+ 2026-11-24 00:00:00 |             1
+ 2026-11-25 00:00:00 |             1
+ 2026-11-26 00:00:00 |             1
+ 2026-11-27 00:00:00 |             1
+ 2026-11-28 00:00:00 |             1
+ 2026-11-29 00:00:00 |             1
+ 2027-01-15 00:00:00 |             1
+ 2027-01-22 00:00:00 |             1
+ 2027-01-29 00:00:00 |             1
+ 2027-02-05 00:00:00 |             1
+ 2027-02-12 00:00:00 |             1
+ 2027-02-19 00:00:00 |             1
+ 2027-02-26 00:00:00 |             1
+ 2027-03-05 00:00:00 |             1
+ 2027-03-12 00:00:00 |             1
+ 2027-03-19 00:00:00 |             1
+ 2027-03-26 00:00:00 |             1
+ 2027-04-02 00:00:00 |             1
+ 2027-04-09 00:00:00 |             1
+ 2027-04-16 00:00:00 |             1
+ 2027-04-23 00:00:00 |             1
+ 2027-04-30 00:00:00 |             1
+(137 rows)
+
+   inicio_periodo    | reservaciones 
+---------------------+---------------
+ 2026-07-27 00:00:00 |             9
+ 2026-08-03 00:00:00 |            32
+ 2026-08-10 00:00:00 |            31
+ 2026-08-17 00:00:00 |            32
+ 2026-08-24 00:00:00 |            31
+ 2026-08-31 00:00:00 |            32
+ 2026-09-07 00:00:00 |            31
+ 2026-09-14 00:00:00 |            32
+ 2026-09-21 00:00:00 |            31
+ 2026-09-28 00:00:00 |            32
+ 2026-10-05 00:00:00 |            31
+ 2026-10-12 00:00:00 |            32
+ 2026-10-19 00:00:00 |            31
+ 2026-10-26 00:00:00 |            32
+ 2026-11-02 00:00:00 |            31
+ 2026-11-09 00:00:00 |             7
+ 2026-11-16 00:00:00 |             7
+ 2026-11-23 00:00:00 |             7
+ 2027-01-11 00:00:00 |             1
+ 2027-01-18 00:00:00 |             1
+ 2027-01-25 00:00:00 |             1
+ 2027-02-01 00:00:00 |             1
+ 2027-02-08 00:00:00 |             1
+ 2027-02-15 00:00:00 |             1
+ 2027-02-22 00:00:00 |             1
+ 2027-03-01 00:00:00 |             1
+ 2027-03-08 00:00:00 |             1
+ 2027-03-15 00:00:00 |             1
+ 2027-03-22 00:00:00 |             1
+ 2027-03-29 00:00:00 |             1
+ 2027-04-05 00:00:00 |             1
+ 2027-04-12 00:00:00 |             1
+ 2027-04-19 00:00:00 |             1
+ 2027-04-26 00:00:00 |             1
+(34 rows)
+
+   inicio_periodo    | reservaciones 
+---------------------+---------------
+ 2026-08-01 00:00:00 |           140
+ 2026-09-01 00:00:00 |           135
+ 2026-10-01 00:00:00 |           139
+ 2026-11-01 00:00:00 |            57
+ 2027-01-01 00:00:00 |             3
+ 2027-02-01 00:00:00 |             4
+ 2027-03-01 00:00:00 |             4
+ 2027-04-01 00:00:00 |             5
+(8 rows)
+
+ plato_id |          nombre           | unidades_solicitadas 
+----------+---------------------------+----------------------
+        2 | Crema de ahuyama          |                  203
+       22 | Jugo de mora              |                  200
+       14 | Cuajada con melao         |                  198
+       10 | Trucha al ajillo          |                  198
+       18 | Merengón de guanábana     |                  196
+        6 | Carimañolas de yuca       |                  195
+        1 | Arepa de choclo con queso |                  119
+       21 | Jugo de lulo              |                  116
+       13 | Obleas con arequipe       |                  116
+        9 | Sobrebarriga en salsa     |                  116
+       17 | Torta de almojábana       |                  115
+        5 | Ceviche de champiñones    |                  113
+       20 | Aguapanela con limón      |                  102
+        8 | Bandeja paisa             |                  101
+       12 | Lomo en salsa de panela   |                  100
+       16 | Brevas con arequipe       |                   98
+       24 | Kumis de la casa          |                   98
+        4 | Patacón con hogao         |                   97
+        7 | Ajiaco santafereño        |                   17
+       15 | Arroz con leche           |                   17
+       23 | Chocolate santafereño     |                   17
+        3 | Empanadas de pipián       |                   17
+       19 | Limonada de panela        |                   17
+       11 | Arroz atollado            |                   16
+(24 rows)
+
+   inicio_periodo    | ventas 
+---------------------+--------
+ 2026-08-01 00:00:00 | 487500
+ 2026-08-02 00:00:00 | 543500
+ 2026-08-03 00:00:00 | 239000
+ 2026-08-04 00:00:00 | 588500
+ 2026-08-05 00:00:00 | 360500
+ 2026-08-06 00:00:00 | 520000
+ 2026-08-07 00:00:00 | 440500
+ 2026-08-08 00:00:00 | 284500
+ 2026-08-09 00:00:00 | 540500
+ 2026-08-10 00:00:00 | 374500
+ 2026-08-11 00:00:00 | 461000
+ 2026-08-12 00:00:00 | 458500
+ 2026-08-13 00:00:00 | 326500
+ 2026-08-14 00:00:00 | 494000
+ 2026-08-15 00:00:00 | 542500
+ 2026-08-16 00:00:00 | 398500
+ 2026-08-17 00:00:00 | 460500
+ 2026-08-18 00:00:00 | 365500
+ 2026-08-19 00:00:00 | 519500
+ 2026-08-20 00:00:00 | 502500
+ 2026-08-21 00:00:00 | 405500
+ 2026-08-22 00:00:00 | 283500
+ 2026-08-23 00:00:00 | 378500
+ 2026-08-24 00:00:00 | 348500
+ 2026-08-25 00:00:00 | 487500
+ 2026-08-26 00:00:00 | 543500
+ 2026-08-27 00:00:00 | 239000
+ 2026-08-28 00:00:00 | 588500
+ 2026-08-29 00:00:00 | 360500
+ 2026-08-30 00:00:00 | 520000
+ 2026-08-31 00:00:00 | 440500
+ 2026-09-01 00:00:00 | 284500
+ 2026-09-02 00:00:00 | 540500
+ 2026-09-03 00:00:00 | 374500
+ 2026-09-04 00:00:00 | 461000
+ 2026-09-05 00:00:00 | 458500
+ 2026-09-06 00:00:00 | 326500
+ 2026-09-07 00:00:00 | 494000
+ 2026-09-08 00:00:00 | 542500
+ 2026-09-09 00:00:00 | 398500
+ 2026-09-10 00:00:00 | 460500
+ 2026-09-11 00:00:00 | 365500
+ 2026-09-12 00:00:00 | 519500
+ 2026-09-13 00:00:00 | 502500
+ 2026-09-14 00:00:00 | 405500
+ 2026-09-15 00:00:00 | 283500
+ 2026-09-16 00:00:00 | 378500
+ 2026-09-17 00:00:00 | 348500
+ 2026-09-18 00:00:00 | 487500
+ 2026-09-19 00:00:00 | 543500
+ 2026-09-20 00:00:00 | 239000
+ 2026-09-21 00:00:00 | 588500
+ 2026-09-22 00:00:00 | 360500
+ 2026-09-23 00:00:00 | 520000
+ 2026-09-24 00:00:00 | 440500
+ 2026-09-25 00:00:00 | 284500
+ 2026-09-26 00:00:00 | 540500
+ 2026-09-27 00:00:00 | 374500
+ 2026-09-28 00:00:00 | 461000
+ 2026-09-29 00:00:00 | 458500
+ 2026-09-30 00:00:00 | 326500
+ 2026-10-01 00:00:00 | 494000
+ 2026-10-02 00:00:00 | 542500
+ 2026-10-03 00:00:00 | 398500
+ 2026-10-04 00:00:00 | 460500
+ 2026-10-05 00:00:00 | 365500
+ 2026-10-06 00:00:00 | 519500
+ 2026-10-07 00:00:00 | 502500
+ 2026-10-08 00:00:00 | 405500
+ 2026-10-09 00:00:00 | 283500
+ 2026-10-10 00:00:00 | 378500
+ 2026-10-11 00:00:00 | 348500
+ 2026-10-12 00:00:00 | 487500
+ 2026-10-13 00:00:00 | 543500
+ 2026-10-14 00:00:00 | 239000
+ 2026-10-15 00:00:00 | 588500
+ 2026-10-16 00:00:00 | 360500
+ 2026-10-17 00:00:00 | 520000
+ 2026-10-18 00:00:00 | 440500
+ 2026-10-19 00:00:00 | 284500
+ 2026-10-20 00:00:00 | 540500
+ 2026-10-21 00:00:00 | 374500
+ 2026-10-22 00:00:00 | 461000
+ 2026-10-23 00:00:00 | 458500
+ 2026-10-24 00:00:00 | 326500
+ 2026-10-25 00:00:00 | 494000
+ 2026-10-26 00:00:00 | 542500
+ 2026-10-27 00:00:00 | 398500
+ 2026-10-28 00:00:00 | 460500
+ 2026-10-29 00:00:00 | 365500
+ 2026-10-30 00:00:00 | 519500
+ 2026-10-31 00:00:00 | 502500
+ 2026-11-01 00:00:00 | 405500
+ 2026-11-02 00:00:00 | 283500
+ 2026-11-03 00:00:00 | 378500
+ 2026-11-04 00:00:00 | 348500
+ 2026-11-05 00:00:00 | 487500
+ 2026-11-06 00:00:00 | 543500
+ 2026-11-07 00:00:00 | 239000
+ 2026-11-08 00:00:00 |  38000
+(100 rows)
+
+   inicio_periodo    | ventas  
+---------------------+---------
+ 2026-07-27 00:00:00 | 1031000
+ 2026-08-03 00:00:00 | 2973500
+ 2026-08-10 00:00:00 | 3055500
+ 2026-08-17 00:00:00 | 2915500
+ 2026-08-24 00:00:00 | 3087500
+ 2026-08-31 00:00:00 | 2886000
+ 2026-09-07 00:00:00 | 3283000
+ 2026-09-14 00:00:00 | 2686000
+ 2026-09-21 00:00:00 | 3109000
+ 2026-09-28 00:00:00 | 3141500
+ 2026-10-05 00:00:00 | 2803500
+ 2026-10-12 00:00:00 | 3179500
+ 2026-10-19 00:00:00 | 2939500
+ 2026-10-26 00:00:00 | 3194500
+ 2026-11-02 00:00:00 | 2318500
+(15 rows)
+
+   inicio_periodo    |  ventas  
+---------------------+----------
+ 2026-08-01 00:00:00 | 13503500
+ 2026-09-01 00:00:00 | 12769500
+ 2026-10-01 00:00:00 | 13607000
+ 2026-11-01 00:00:00 |  2724000
+(4 rows)
+
+ reservacion_id | cantidad | estado | mesas |    primer_inicio    
+----------------+----------+--------+-------+---------------------
+            500 |        2 |      0 | 1     | 2026-11-09 12:00:00
+            496 |        4 |      1 | 11    | 2026-11-08 19:17:00
+            481 |        6 |      2 | 1, 6  | 2026-11-05 12:00:00
+            441 |        2 |      2 | 1     | 2026-10-28 12:00:00
+            401 |        2 |      2 | 1     | 2026-10-20 12:00:00
+            361 |        2 |      2 | 1     | 2026-10-12 12:00:00
+            321 |        2 |      2 | 1     | 2026-10-04 12:00:00
+            281 |        2 |      2 | 1     | 2026-09-26 12:00:00
+            241 |        2 |      2 | 1     | 2026-09-18 12:00:00
+            201 |        2 |      2 | 1     | 2026-09-10 12:00:00
+            161 |        2 |      2 | 1     | 2026-09-02 12:00:00
+            121 |        2 |      2 | 1     | 2026-08-25 12:00:00
+             81 |        2 |      2 | 1     | 2026-08-17 12:00:00
+             41 |        2 |      2 | 1     | 2026-08-09 12:00:00
+              1 |        2 |      2 | 1     | 2026-08-01 12:00:00
+(15 rows)
+
+ pedido_id | mesa_id |       primer_solicitado       | estado_pedido | orden_id |           plato           | cantidad | estado_orden 
+-----------+---------+-------------------------------+---------------+----------+---------------------------+----------+--------------
+       397 |      11 | 2026-11-08 19:57:56.576006-05 |             0 |      991 | Arepa de choclo con queso |        1 |            0
+       397 |      11 | 2026-11-08 19:57:56.576006-05 |             0 |      992 | Crema de ahuyama          |        1 |            0
+       397 |      11 | 2026-11-08 19:57:56.576006-05 |             0 |      993 | Empanadas de pipián       |        1 |            0
+       397 |      11 | 2026-11-08 19:57:56.576006-05 |             0 |      994 | Patacón con hogao         |        1 |            0
+       397 |      11 | 2026-11-08 19:57:56.576006-05 |             0 |      995 | Ceviche de champiñones    |        1 |            0
+       385 |       1 | 2026-11-05 12:30:00-05        |             2 |      961 | Arepa de choclo con queso |        3 |            2
+       385 |       1 | 2026-11-05 12:30:00-05        |             2 |      962 | Crema de ahuyama          |        4 |            2
+       353 |       1 | 2026-10-28 12:30:00-05        |             2 |      881 | Sobrebarriga en salsa     |        3 |            2
+       353 |       1 | 2026-10-28 12:30:00-05        |             2 |      882 | Trucha al ajillo          |        4 |            2
+       321 |       1 | 2026-10-20 12:30:00-05        |             2 |      801 | Torta de almojábana       |        3 |            2
+       321 |       1 | 2026-10-20 12:30:00-05        |             2 |      802 | Merengón de guanábana     |        4 |            2
+       289 |       1 | 2026-10-12 12:30:00-05        |             2 |      721 | Arepa de choclo con queso |        3 |            2
+       289 |       1 | 2026-10-12 12:30:00-05        |             2 |      722 | Crema de ahuyama          |        4 |            2
+       257 |       1 | 2026-10-04 12:30:00-05        |             2 |      641 | Sobrebarriga en salsa     |        3 |            2
+       257 |       1 | 2026-10-04 12:30:00-05        |             2 |      642 | Trucha al ajillo          |        4 |            2
+       225 |       1 | 2026-09-26 12:30:00-05        |             2 |      561 | Torta de almojábana       |        3 |            2
+       225 |       1 | 2026-09-26 12:30:00-05        |             2 |      562 | Merengón de guanábana     |        4 |            2
+       193 |       1 | 2026-09-18 12:30:00-05        |             2 |      481 | Arepa de choclo con queso |        3 |            2
+       193 |       1 | 2026-09-18 12:30:00-05        |             2 |      482 | Crema de ahuyama          |        4 |            2
+       161 |       1 | 2026-09-10 12:30:00-05        |             2 |      401 | Sobrebarriga en salsa     |        3 |            2
+       161 |       1 | 2026-09-10 12:30:00-05        |             2 |      402 | Trucha al ajillo          |        4 |            2
+       129 |       1 | 2026-09-02 12:30:00-05        |             2 |      321 | Torta de almojábana       |        3 |            2
+       129 |       1 | 2026-09-02 12:30:00-05        |             2 |      322 | Merengón de guanábana     |        4 |            2
+        97 |       1 | 2026-08-25 12:30:00-05        |             2 |      241 | Arepa de choclo con queso |        3 |            2
+        97 |       1 | 2026-08-25 12:30:00-05        |             2 |      242 | Crema de ahuyama          |        4 |            2
+        65 |       1 | 2026-08-17 12:30:00-05        |             2 |      161 | Sobrebarriga en salsa     |        3 |            2
+        65 |       1 | 2026-08-17 12:30:00-05        |             2 |      162 | Trucha al ajillo          |        4 |            2
+        33 |       1 | 2026-08-09 12:30:00-05        |             2 |       81 | Torta de almojábana       |        3 |            2
+        33 |       1 | 2026-08-09 12:30:00-05        |             2 |       82 | Merengón de guanábana     |        4 |            2
+         1 |       1 | 2026-08-01 12:30:00-05        |             2 |        1 | Arepa de choclo con queso |        3 |            2
+         1 |       1 | 2026-08-01 12:30:00-05        |             2 |        2 | Crema de ahuyama          |        4 |            2
+(31 rows)
+
+Operaciones de escritura de todos los casos de uso: ejecutadas, validadas y revertidas.

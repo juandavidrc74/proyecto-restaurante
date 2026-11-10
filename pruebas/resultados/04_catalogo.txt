@@ -1,0 +1,211 @@
+=== Columnas
+   table_name   |  column_name   |          data_type          | is_nullable |                por_omision                 
+----------------+----------------+-----------------------------+-------------+--------------------------------------------
+ actuaciones    | id             | integer                     | NO          | nextval('actuaciones_id_seq'::regclass)
+ actuaciones    | rol_id         | integer                     | NO          | 
+ actuaciones    | usuario_id     | integer                     | NO          | 
+ especialidades | id             | integer                     | NO          | nextval('especialidades_id_seq'::regclass)
+ especialidades | cocinero_id    | integer                     | NO          | 
+ especialidades | plato_id       | integer                     | NO          | 
+ horarios       | id             | integer                     | NO          | nextval('horarios_id_seq'::regclass)
+ horarios       | mesa_id        | integer                     | NO          | 
+ horarios       | reservacion_id | integer                     | NO          | 
+ horarios       | inicio         | timestamp without time zone | NO          | 
+ horarios       | duracion       | interval                    | NO          | 
+ mesas          | id             | integer                     | NO          | nextval('mesas_id_seq'::regclass)
+ mesas          | sillas         | integer                     | NO          | 
+ ordenes        | id             | integer                     | NO          | nextval('ordenes_id_seq'::regclass)
+ ordenes        | plato_id       | integer                     | NO          | 
+ ordenes        | pedido_id      | integer                     | NO          | 
+ ordenes        | estado         | integer                     | NO          | 0
+ ordenes        | cantidad       | integer                     | NO          | 
+ ordenes        | solicitado     | timestamp with time zone    | NO          | now()
+ pedidos        | id             | integer                     | NO          | nextval('pedidos_id_seq'::regclass)
+ pedidos        | cliente_id     | integer                     | NO          | 
+ pedidos        | mesero_id      | integer                     | NO          | 
+ platos         | id             | integer                     | NO          | nextval('platos_id_seq'::regclass)
+ platos         | tipo_id        | integer                     | NO          | 
+ platos         | nombre         | text                        | NO          | 
+ platos         | descripcion    | text                        | NO          | 
+ platos         | tiempo         | interval                    | NO          | 
+ platos         | precio         | numeric                     | NO          | 
+ preparaciones  | id             | integer                     | NO          | nextval('preparaciones_id_seq'::regclass)
+ preparaciones  | cocinero_id    | integer                     | NO          | 
+ preparaciones  | orden_id       | integer                     | NO          | 
+ reservaciones  | id             | integer                     | NO          | nextval('reservaciones_id_seq'::regclass)
+ reservaciones  | cliente_id     | integer                     | NO          | 
+ reservaciones  | cantidad       | integer                     | NO          | 
+ reservaciones  | estado         | integer                     | NO          | 0
+ roles          | id             | integer                     | NO          | nextval('roles_id_seq'::regclass)
+ roles          | nombre         | text                        | NO          | 
+ tipos          | id             | integer                     | NO          | nextval('tipos_id_seq'::regclass)
+ tipos          | nombre         | text                        | NO          | 
+ usuarios       | id             | integer                     | NO          | nextval('usuarios_id_seq'::regclass)
+ usuarios       | nombre         | text                        | NO          | 
+ usuarios       | clave          | bytea                       | YES         | 
+ usuarios       | fecha_clave    | timestamp without time zone | YES         | 
+(43 rows)
+
+=== Restricciones
+     tabla      |            restriccion             | tipo |                                              definicion                                               
+----------------+------------------------------------+------+-------------------------------------------------------------------------------------------------------
+ actuaciones    | fk_actuaciones_rol                 | f    | FOREIGN KEY (rol_id) REFERENCES roles(id) ON DELETE RESTRICT
+ actuaciones    | fk_actuaciones_usuario             | f    | FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
+ actuaciones    | actuaciones_pkey                   | p    | PRIMARY KEY (id)
+ actuaciones    | uq_actuaciones_usuario_rol         | u    | UNIQUE (usuario_id, rol_id)
+ especialidades | fk_especialidades_cocinero         | f    | FOREIGN KEY (cocinero_id) REFERENCES usuarios(id) ON DELETE CASCADE
+ especialidades | fk_especialidades_plato            | f    | FOREIGN KEY (plato_id) REFERENCES platos(id) ON DELETE CASCADE
+ especialidades | especialidades_pkey                | p    | PRIMARY KEY (id)
+ especialidades | uq_especialidades_cocinero_plato   | u    | UNIQUE (cocinero_id, plato_id)
+ horarios       | ck_horarios_duracion               | c    | CHECK (((duracion > '00:00:00'::interval) AND (duracion < '02:00:00'::interval)))
+ horarios       | fk_horarios_mesa                   | f    | FOREIGN KEY (mesa_id) REFERENCES mesas(id) ON DELETE RESTRICT
+ horarios       | fk_horarios_reservacion            | f    | FOREIGN KEY (reservacion_id) REFERENCES reservaciones(id) ON DELETE RESTRICT
+ horarios       | pk_horarios                        | p    | PRIMARY KEY (id, inicio)
+ horarios       | tr_horarios_reservacion_diferida   | t    | TRIGGER DEFERRABLE INITIALLY DEFERRED
+ horarios_1     | ck_horarios_duracion               | c    | CHECK (((duracion > '00:00:00'::interval) AND (duracion < '02:00:00'::interval)))
+ horarios_1     | tr_horarios_reservacion_diferida   | t    | TRIGGER DEFERRABLE INITIALLY DEFERRED
+ horarios_2     | ck_horarios_duracion               | c    | CHECK (((duracion > '00:00:00'::interval) AND (duracion < '02:00:00'::interval)))
+ horarios_2     | tr_horarios_reservacion_diferida   | t    | TRIGGER DEFERRABLE INITIALLY DEFERRED
+ horarios_3     | ck_horarios_duracion               | c    | CHECK (((duracion > '00:00:00'::interval) AND (duracion < '02:00:00'::interval)))
+ horarios_3     | tr_horarios_reservacion_diferida   | t    | TRIGGER DEFERRABLE INITIALLY DEFERRED
+ mesas          | ck_mesas_sillas_positivas          | c    | CHECK ((sillas > 0))
+ mesas          | mesas_pkey                         | p    | PRIMARY KEY (id)
+ ordenes        | ck_ordenes_cantidad_positiva       | c    | CHECK ((cantidad > 0))
+ ordenes        | ck_ordenes_estado                  | c    | CHECK ((estado = ANY (ARRAY[0, 1, 2])))
+ ordenes        | fk_ordenes_pedido                  | f    | FOREIGN KEY (pedido_id) REFERENCES pedidos(id) ON DELETE RESTRICT
+ ordenes        | fk_ordenes_plato                   | f    | FOREIGN KEY (plato_id) REFERENCES platos(id) ON DELETE RESTRICT
+ ordenes        | ordenes_pkey                       | p    | PRIMARY KEY (id)
+ pedidos        | fk_pedidos_cliente                 | f    | FOREIGN KEY (cliente_id) REFERENCES usuarios(id) ON DELETE RESTRICT
+ pedidos        | fk_pedidos_mesero                  | f    | FOREIGN KEY (mesero_id) REFERENCES usuarios(id) ON DELETE RESTRICT
+ pedidos        | pedidos_pkey                       | p    | PRIMARY KEY (id)
+ platos         | ck_platos_precio_valido            | c    | CHECK (((precio >= (0)::numeric) AND (precio <> 'NaN'::numeric)))
+ platos         | ck_platos_tiempo_positivo          | c    | CHECK ((tiempo > '00:00:00'::interval))
+ platos         | fk_platos_tipo                     | f    | FOREIGN KEY (tipo_id) REFERENCES tipos(id) ON DELETE RESTRICT
+ platos         | platos_pkey                        | p    | PRIMARY KEY (id)
+ platos         | uq_platos_nombre                   | u    | UNIQUE (nombre)
+ preparaciones  | fk_preparaciones_cocinero          | f    | FOREIGN KEY (cocinero_id) REFERENCES usuarios(id) ON DELETE RESTRICT
+ preparaciones  | fk_preparaciones_orden             | f    | FOREIGN KEY (orden_id) REFERENCES ordenes(id) ON DELETE RESTRICT
+ preparaciones  | preparaciones_pkey                 | p    | PRIMARY KEY (id)
+ preparaciones  | uq_preparaciones_orden_cocinero    | u    | UNIQUE (orden_id, cocinero_id)
+ reservaciones  | ck_reservaciones_cantidad_positiva | c    | CHECK ((cantidad > 0))
+ reservaciones  | ck_reservaciones_estado            | c    | CHECK ((estado = ANY (ARRAY[0, 1, 2, 3])))
+ reservaciones  | fk_reservaciones_cliente           | f    | FOREIGN KEY (cliente_id) REFERENCES usuarios(id) ON DELETE RESTRICT
+ reservaciones  | reservaciones_pkey                 | p    | PRIMARY KEY (id)
+ reservaciones  | tr_reservaciones_activa_diferida   | t    | TRIGGER DEFERRABLE INITIALLY DEFERRED
+ roles          | roles_pkey                         | p    | PRIMARY KEY (id)
+ roles          | uq_roles_nombre                    | u    | UNIQUE (nombre)
+ tipos          | ck_tipos_categoria                 | c    | CHECK ((nombre = ANY (ARRAY['entrada'::text, 'plato fuerte'::text, 'postre'::text, 'bebida'::text])))
+ tipos          | tipos_pkey                         | p    | PRIMARY KEY (id)
+ tipos          | uq_tipos_nombre                    | u    | UNIQUE (nombre)
+ usuarios       | ck_usuarios_clave_fecha_juntas     | c    | CHECK (((clave IS NULL) = (fecha_clave IS NULL)))
+ usuarios       | ck_usuarios_nombre_no_vacio        | c    | CHECK ((btrim(nombre) <> ''::text))
+ usuarios       | usuarios_pkey                      | p    | PRIMARY KEY (id)
+(51 rows)
+
+=== Indices
+     tabla      |              indice              
+----------------+----------------------------------
+ actuaciones    | actuaciones_pkey
+ actuaciones    | ix_actuaciones_rol_id
+ actuaciones    | uq_actuaciones_usuario_rol
+ especialidades | especialidades_pkey
+ especialidades | ix_especialidades_plato_id
+ especialidades | uq_especialidades_cocinero_plato
+ horarios       | ix_horarios_id
+ horarios       | ix_horarios_inicio
+ horarios       | ix_horarios_mesa_inicio
+ horarios       | ix_horarios_reservacion_id
+ horarios       | pk_horarios
+ mesas          | mesas_pkey
+ ordenes        | ix_ordenes_pedido_solicitado
+ ordenes        | ix_ordenes_plato_id
+ ordenes        | ordenes_pkey
+ pedidos        | ix_pedidos_cliente_id
+ pedidos        | ix_pedidos_mesero_id
+ pedidos        | pedidos_pkey
+ platos         | ix_platos_tipo_id
+ platos         | platos_pkey
+ platos         | uq_platos_nombre
+ preparaciones  | ix_preparaciones_cocinero_id
+ preparaciones  | ix_preparaciones_orden_id
+ preparaciones  | preparaciones_pkey
+ preparaciones  | uq_preparaciones_orden_cocinero
+ reservaciones  | ix_reservaciones_cliente_estado
+ reservaciones  | ix_reservaciones_estado
+ reservaciones  | reservaciones_pkey
+ roles          | roles_pkey
+ roles          | uq_roles_nombre
+ tipos          | tipos_pkey
+ tipos          | uq_tipos_nombre
+ usuarios       | usuarios_pkey
+(33 rows)
+
+=== Triggers
+     tabla      |            trigger_nombre             |  momento  |               funcion               
+----------------+---------------------------------------+-----------+-------------------------------------
+ actuaciones    | tr_actuaciones_proteger_historial     | inmediato | proteger_rol_con_historial
+ especialidades | tr_especialidades_rol                 | inmediato | comprobar_rol_especialidad
+ horarios       | tr_horarios_bloquear_agenda           | inmediato | bloquear_agenda_horario
+ horarios       | tr_horarios_proteger                  | inmediato | proteger_horario
+ horarios       | tr_horarios_reservacion_diferida      | diferido  | validar_reservacion_diferida
+ horarios       | tr_horarios_validar_inmediato         | inmediato | validar_horario_inmediato
+ mesas          | tr_mesas_bloquear_cambio_sillas       | inmediato | bloquear_cambio_mesa
+ mesas          | tr_mesas_validar_sillas               | inmediato | validar_cambio_mesa
+ ordenes        | tr_ordenes_validar                    | inmediato | validar_orden
+ pedidos        | tr_pedidos_proteger_cliente           | inmediato | proteger_cliente_pedido
+ pedidos        | tr_pedidos_rol_mesero                 | inmediato | comprobar_rol_pedido
+ preparaciones  | tr_preparaciones_comprobar            | inmediato | comprobar_preparacion
+ preparaciones  | tr_preparaciones_proteger_finalizadas | inmediato | proteger_preparacion_finalizada
+ reservaciones  | tr_reservaciones_activa_diferida      | diferido  | validar_reservacion_activa_diferida
+ reservaciones  | tr_reservaciones_validar              | inmediato | validar_cambio_reservacion
+(15 rows)
+
+=== Funciones
+                                            funcion                                             | volatilidad 
+------------------------------------------------------------------------------------------------+-------------
+ bloquear_agenda_horario()                                                                      | VOLATILE
+ bloquear_cambio_mesa()                                                                         | VOLATILE
+ comprobar_preparacion()                                                                        | VOLATILE
+ comprobar_rol_especialidad()                                                                   | VOLATILE
+ comprobar_rol_pedido()                                                                         | VOLATILE
+ horario_tiene_pedidos(p_horario_id integer, p_inicio timestamp without time zone)              | VOLATILE
+ mesa_de_pedido(p_pedido_id integer)                                                            | STABLE
+ proteger_cliente_pedido()                                                                      | VOLATILE
+ proteger_horario()                                                                             | VOLATILE
+ proteger_preparacion_finalizada()                                                              | VOLATILE
+ proteger_rol_con_historial()                                                                   | VOLATILE
+ tiene_rol(p_usuario_id integer, p_rol text)                                                    | STABLE
+ validar_cambio_mesa()                                                                          | VOLATILE
+ validar_cambio_reservacion()                                                                   | VOLATILE
+ validar_cruce_horario(p_horario_id integer, p_inicio timestamp without time zone)              | VOLATILE
+ validar_cupo_agenda()                                                                          | VOLATILE
+ validar_cupo_ventana(p_desde timestamp without time zone, p_hasta timestamp without time zone) | VOLATILE
+ validar_horario_inmediato()                                                                    | VOLATILE
+ validar_orden()                                                                                | VOLATILE
+ validar_reservacion_activa_diferida()                                                          | VOLATILE
+ validar_reservacion_diferida()                                                                 | VOLATILE
+ validar_sillas_reservacion(p_reservacion_id integer)                                           | VOLATILE
+(22 rows)
+
+=== Vistas
+      vista      
+-----------------
+ pedidos_detalle
+(1 row)
+
+=== Tablespaces
+     tablespace     |                 directorio                 
+--------------------+--------------------------------------------
+ ts_reservaciones_1 | /var/lib/pgsql/tablespaces/reservaciones_1
+ ts_reservaciones_2 | /var/lib/pgsql/tablespaces/reservaciones_2
+ ts_reservaciones_3 | /var/lib/pgsql/tablespaces/reservaciones_3
+(3 rows)
+
+=== Particiones
+ particion  |                               rango                                |     tablespace     
+------------+--------------------------------------------------------------------+--------------------
+ horarios_1 | FOR VALUES FROM (MINVALUE) TO ('2026-10-01 00:00:00')              | ts_reservaciones_1
+ horarios_2 | FOR VALUES FROM ('2026-10-01 00:00:00') TO ('2027-01-01 00:00:00') | ts_reservaciones_2
+ horarios_3 | FOR VALUES FROM ('2027-01-01 00:00:00') TO (MAXVALUE)              | ts_reservaciones_3
+(3 rows)
+
