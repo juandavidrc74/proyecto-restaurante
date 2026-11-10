@@ -2,6 +2,8 @@
 
 Bases de datos: Administración y Aplicaciones. Pontificia Universidad Javeriana. Ing. Ricardo Naranjo Faccini, M.Sc.
 
+Integrantes: Juan David Ramírez, Alejandro Doncel y Dana Katalina Díaz.
+
 Este documento describe el diseño de la base de datos, los casos de uso, los tablespaces, las particiones y las consultas SQL, como pide el PDF en su sección 7. Las decisiones que el enunciado dejaba abiertas están en [decisiones.md](decisiones.md), los resultados de las pruebas en [resultados_pruebas.md](resultados_pruebas.md) y la comprobación de cada requisito en [auditoria_final.md](auditoria_final.md).
 
 ## 1. Descripción general

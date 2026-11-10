@@ -2,6 +2,8 @@
 
 Aplicación PHP y base de datos PostgreSQL para gestionar las mesas, las reservaciones, el menú, los pedidos y las entregas de un restaurante. Bases de datos: Administración y Aplicaciones, Pontificia Universidad Javeriana.
 
+Integrantes: Juan David Ramírez, Alejandro Doncel y Dana Katalina Díaz.
+
 ## Documentación
 
 | Documento | Contenido |
